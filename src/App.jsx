@@ -1,4 +1,5 @@
 import './App.css'
+import { Button } from 'flowbite-react';
 
 function App() {
 
@@ -6,6 +7,8 @@ function App() {
     <>
       <div>
         <p className='font-bold'>test</p>
+        <Button color="warning">Warning</Button>
+        
       </div>
     </>
   )
