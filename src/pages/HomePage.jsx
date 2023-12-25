@@ -1,4 +1,4 @@
-import TitleName from "../components/TitleName";
+import TitleName from "../components/MyTitleName";
 
 export default function HomePage(){
     return (
