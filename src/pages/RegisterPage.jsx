@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
+import axios from "axios";
 
 export default function RegisterPage() {
   const inputRefs = {
@@ -12,9 +13,45 @@ export default function RegisterPage() {
     phone: useRef(),
   };
 
-  const handleRegister = (e) => {
+  const inputFields = [
+    {
+      id: "1",
+      label: "FirstName",
+      type: "text",
+      inputRef: inputRefs.firstName,
+    },
+    { id: "2", label: "LastName", type: "text", inputRef: inputRefs.lastName },
+    { id: "3", label: "Email", type: "email", inputRef: inputRefs.email },
+    {
+      id: "4",
+      label: "Password",
+      type: "password",
+      inputRef: inputRefs.password,
+    },
+    {
+      id: "5",
+      label: "Confirm Password",
+      type: "password",
+      inputRef: inputRefs.confirmPassword,
+    },
+    { id: "6", label: "Phone", type: "text", inputRef: inputRefs.phone },
+  ];
+
+  const handleRegister = async (e) => {
     e.preventDefault();
-    console.log("REF:", inputRefs);
+    const inputData = {
+      firstName: inputRefs.firstName.current.value,
+      lastName: inputRefs.lastName.current.value,
+      email: inputRefs.email.current.value,
+      password: inputRefs.password.current.value,
+      confirmPassword: inputRefs.confirmPassword.current.value,
+      phone: inputRefs.phone.current.value,
+    };
+    console.log("DATA:", inputData);
+    const res = await axios.post(
+      "http://localhost:1112/authen/register",
+      inputData
+    );
   };
 
   return (
@@ -28,42 +65,14 @@ export default function RegisterPage() {
       <section className="flex-1 flex flex-col justify-center border p-5">
         <form action="" className="px-5">
           <div className="mb-6 flex flex-col gap-3">
-            <MyInput
-              text={`FirstName`}
-              type={`text`}
-              inputref={inputRefs.firstName}
-              style={``}
-            />
-            <MyInput
-              text={`LastName`}
-              type={`text`}
-              inputref={inputRefs.lastName}
-              style={``}
-            />
-            <MyInput
-              text={`Email`}
-              type={`email`}
-              inputref={inputRefs.email}
-              style={``}
-            />
-            <MyInput
-              text={`Password`}
-              type={`password`}
-              inputref={inputRefs.password}
-              style={``}
-            />
-            <MyInput
-              text={`Confirm Password`}
-              type={`password`}
-              inputref={inputRefs.confirmPassword}
-              style={``}
-            />
-            <MyInput
-              text={`Phone`}
-              type={`text`}
-              inputref={inputRefs.phone}
-              style={``}
-            />
+            {inputFields.map((item, index) => (
+              <MyInput
+                key={`${item.id}-${index}`}
+                type={item.type}
+                text={item.label}
+                inputref={item.inputRef}
+              />
+            ))}
           </div>
           <div className="text-center">
             <MyButton
