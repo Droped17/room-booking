@@ -1,16 +1,12 @@
 import './App.css'
-import { Button } from 'flowbite-react';
+import Route from './router/Route';
 
 function App() {
 
   return (
-    <>
-      <div>
-        <p className='font-bold'>test</p>
-        <Button color="warning">Warning</Button>
-        
-      </div>
-    </>
+      <>
+       <Route/>
+      </>
   )
 }
 
