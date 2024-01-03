@@ -12,7 +12,7 @@ export default function RegisterPage() {
     confirmPassword: useRef(),
     phone: useRef(),
   };
-  
+
   const handleRegister = async (e) => {
     e.preventDefault();
     const inputData = {
@@ -24,8 +24,11 @@ export default function RegisterPage() {
       phone: inputRefs.phone.current.value,
     };
     console.log("DATA:", inputData);
-    const res = await axios.post("http://localhost:1112/authen/register",inputData)
-    // console.log(res);
+    const result = await axios.post(
+      "http://localhost:1112/authen/register",
+      inputData
+    );
+    console.log(result);
   };
 
   return (

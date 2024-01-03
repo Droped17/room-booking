@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import MyInput from "../components/MyInput";
 import MyButton from "../components/MyButton";
+import axios from "axios";
 
 export default function LoginPage() {
   const inputRefs = {
@@ -8,9 +9,24 @@ export default function LoginPage() {
     password: useRef(),
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log(inputRefs);
+  const handleLogin = async (e) => {
+    try {
+      e.preventDefault();
+      const inputData = {
+        email: inputRefs.email.current.value,
+        password: inputRefs.password.current.value,
+      };
+      console.log(inputData);
+
+      const result = await axios.post(
+        "http://localhost:1112/authen/login",
+        inputData
+      );
+
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -24,8 +40,12 @@ export default function LoginPage() {
       <section className="flex-1 flex flex-col justify-center border p-5 sm:h-[50vh]">
         <form action="" className="px-5">
           <div className="mb-6 flex flex-col gap-3">
-            <MyInput type={`text`} text={`Email`} inputref={inputRefs.email}/>
-            <MyInput type={`password`} text={`Password`} inputref={inputRefs.password}/>
+            <MyInput type={`text`} text={`Email`} inputref={inputRefs.email} />
+            <MyInput
+              type={`password`}
+              text={`Password`}
+              inputref={inputRefs.password}
+            />
             <MyButton
               onclick={handleLogin}
               text={`Login`}
