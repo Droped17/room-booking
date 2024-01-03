@@ -1,6 +1,8 @@
 import { useRef } from "react";
+import { Button } from "@mui/material";
 import MyButton from "../components/MyButton";
 import MyInput from "../components/MyInput";
+// import axios from "../config/axios";
 import axios from "axios";
 
 export default function RegisterPage() {
@@ -24,10 +26,7 @@ export default function RegisterPage() {
       phone: inputRefs.phone.current.value,
     };
     console.log("DATA:", inputData);
-    const result = await axios.post(
-      "http://localhost:1112/authen/register",
-      inputData
-    );
+    const result = await axios.post("/authen/register", inputData);
     console.log(result);
   };
 
@@ -80,11 +79,14 @@ export default function RegisterPage() {
             />
           </div>
           <div className="text-center">
-            <MyButton
+            <Button variant="contained" onClick={handleRegister} color="success">
+              Register
+            </Button>
+            {/* <MyButton
               text={`Register`}
               onclick={handleRegister}
               style={`bg-green-500 text-white rounded-md`}
-            />
+            /> */}
           </div>
         </form>
       </section>

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import MyInput from "../components/MyInput";
 import MyButton from "../components/MyButton";
+// import axios from "../config/axios";
 import axios from "axios";
 
 export default function LoginPage() {
@@ -19,7 +20,7 @@ export default function LoginPage() {
       console.log(inputData);
 
       const result = await axios.post(
-        "http://localhost:1112/authen/login",
+        "/authen/login",
         inputData
       );
 
