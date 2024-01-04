@@ -4,11 +4,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { Button } from "@mui/material";
 import { useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import MyTitleName from "../components/MyTitleName";
+import MyRoom from "../components/MyRoom";
 
 export default function HomePage() {
   const roomDataLeft = [
@@ -68,7 +70,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="px-40 ">
+    <div className="px-40 flex flex-col gap-4">
       <section className="flex flex-col gap-4">
         <TitleName title={`HOMEPAGE`} />
         <article className="bg-gray-200 p-5 flex justify-around">
@@ -121,31 +123,25 @@ export default function HomePage() {
           {floor ? (
             <div>
               {leftSideFloorOne.map((item, index) => (
-                <div
-                key={`${item.id} - ${index}`}
-                  className={`${
-                    item.status === "not ok"
-                      ? "p-5 border bg-red-200"
-                      : "p-5 border bg-orange-300"
-                  }`}
-                >
-                  <p>{item.roomNo}</p>
-                </div>
+                <MyRoom
+                  key={`${item.id} - ${index}`}
+                  id={item.id}
+                  index={index}
+                  status={item.status}
+                  roomNo={item.roomNo}
+                />
               ))}
             </div>
           ) : (
             <div>
               {leftSideFloorTwo.map((item, index) => (
-                <div
-                key={`${item.id} - ${index}`}
-                  className={`${
-                    item.status === "not ok"
-                      ? "p-5 border bg-red-200"
-                      : "p-5 border bg-orange-300"
-                  }`}
-                >
-                  <p>{item.roomNo}</p>
-                </div>
+                <MyRoom
+                  key={`${item.id} - ${index}`}
+                  id={item.id}
+                  index={index}
+                  status={item.status}
+                  roomNo={item.roomNo}
+                />
               ))}
             </div>
           )}
@@ -155,31 +151,25 @@ export default function HomePage() {
           {floor ? (
             <div>
               {rightSideFloorOne.map((item, index) => (
-                <div
-                key={`${item.id} - ${index}`}
-                  className={`${
-                    item.status === "not ok"
-                      ? "p-5 border bg-red-200"
-                      : "p-5 border bg-orange-300"
-                  }`}
-                >
-                  <p>{item.roomNo}</p>
-                </div>
+                <MyRoom
+                  key={`${item.id} - ${index}`}
+                  id={item.id}
+                  index={index}
+                  status={item.status}
+                  roomNo={item.roomNo}
+                />
               ))}
             </div>
           ) : (
             <div>
               {rightSideFloorTwo.map((item, index) => (
-                <div
-                key={`${item.id} - ${index}`}
-                  className={`${
-                    item.status === "not ok"
-                      ? "p-5 border bg-red-200"
-                      : "p-5 border bg-orange-300"
-                  }`}
-                >
-                  <p>{item.roomNo}</p>
-                </div>
+                <MyRoom
+                  key={`${item.id} - ${index}`}
+                  id={item.id}
+                  index={index}
+                  status={item.status}
+                  roomNo={item.roomNo}
+                />
               ))}
             </div>
           )}
@@ -187,7 +177,8 @@ export default function HomePage() {
 
         <article className="flex justify-between">
           <p>Date</p>
-          <button onClick={handleSelectFloor}>Select Floor</button>
+          <Button variant="contained" onClick={handleSelectFloor}>{floor ? "Floor 2" : "Floor 1"}</Button>
+        
         </article>
       </section>
 
