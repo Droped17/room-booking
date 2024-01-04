@@ -11,6 +11,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import MyTitleName from "../components/MyTitleName";
 import MyRoom from "../components/MyRoom";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const roomDataLeft = [
@@ -68,6 +69,12 @@ export default function HomePage() {
   const handleSelectFloor = () => {
     setFloor(!floor);
   };
+
+  const handleDetail = (id) => {
+    navigate(`/${id}`);
+  };
+
+  const navigate = useNavigate();
 
   return (
     <div className="px-40 flex flex-col gap-4">
@@ -129,6 +136,7 @@ export default function HomePage() {
                   index={index}
                   status={item.status}
                   roomNo={item.roomNo}
+                  onClick={()=> handleDetail(item.id)}
                 />
               ))}
             </div>
@@ -141,6 +149,7 @@ export default function HomePage() {
                   index={index}
                   status={item.status}
                   roomNo={item.roomNo}
+                  onClick={()=> handleDetail(item.id)}
                 />
               ))}
             </div>
@@ -157,6 +166,7 @@ export default function HomePage() {
                   index={index}
                   status={item.status}
                   roomNo={item.roomNo}
+                  onClick={()=> handleDetail(item.id)}
                 />
               ))}
             </div>
@@ -169,6 +179,7 @@ export default function HomePage() {
                   index={index}
                   status={item.status}
                   roomNo={item.roomNo}
+                  onClick={()=> handleDetail(item.id)}
                 />
               ))}
             </div>
