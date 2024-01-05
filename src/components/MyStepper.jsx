@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
+import { StepConnector } from "@mui/material";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
@@ -15,9 +16,9 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 export default function MyStepper() {
   const steps = [
-    "วันที่,จำนวนคืน,จำนวนคน,",
-    "Create an ad group",
-    "Create an ad",
+    "1",
+    "2",
+    "3",
   ];
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
@@ -74,7 +75,10 @@ export default function MyStepper() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep}>
+      <Stepper
+        activeStep={activeStep}
+        connector={<StepConnector sx={{ backgroundColor: "green" }} />}
+      >
         {steps.map((label, index) => {
           const stepProps = {};
           const labelProps = {};
@@ -121,17 +125,15 @@ export default function MyStepper() {
         <>
           <p>Step3</p>
           <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
-            </Button>
+            {activeStep === steps.length - 1 ? "Finish" : "Next"}
+          </Button>
         </>
       ) : (
-        <>
-          <p>Finish</p>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-            <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>Reset</Button>
-          </Box>
-        </>
+        <div className="text-center">
+          <Button onClick={handleReset} variant="contained">
+            Confirm
+          </Button>
+        </div>
       )}
     </Box>
   );
