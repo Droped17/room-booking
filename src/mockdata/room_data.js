@@ -1,0 +1,33 @@
+export const roomDataLeft = [
+    { id: 1, roomNo: 1, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 2, roomNo: 2, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 3, roomNo: 3, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 4, roomNo: 4, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 5, roomNo: 5, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 6, roomNo: 6, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 7, roomNo: 7, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 8, roomNo: 15, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 9, roomNo: 16, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 10, roomNo: 17, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 11, roomNo: 18, floor: 2, roomDetail: "detail", status: "not ok" },
+    { id: 12, roomNo: 19, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 13, roomNo: 20, floor: 2, roomDetail: "detail", status: "not ok" },
+    { id: 14, roomNo: 21, floor: 2, roomDetail: "detail", status: "not ok" },
+  ];
+
+export const roomDataRight = [
+    { id: 1, roomNo: 8, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 2, roomNo: 9, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 3, roomNo: 10, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 4, roomNo: 11, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 5, roomNo: 12, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 6, roomNo: 13, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 7, roomNo: 14, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 1, roomNo: 22, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 2, roomNo: 23, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 3, roomNo: 24, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 4, roomNo: 25, floor: 2, roomDetail: "detail", status: "not ok" },
+    { id: 5, roomNo: 26, floor: 2, roomDetail: "detail", status: "ok" },
+    { id: 6, roomNo: 27, floor: 2, roomDetail: "detail", status: "not ok" },
+    { id: 7, roomNo: 28, floor: 2, roomDetail: "detail", status: "not ok" },
+  ];
