@@ -6,7 +6,7 @@ export default function Header() {
     navigate("/");
   }
   return (
-    <div className="p-3 bg-green-500 text-white flex justify-between">
+    <div className="p-3 bg-primary text-white flex justify-between">
       <p onClick={handleLogo} className="cursor-pointer">LOGO</p>
       <div className="flex gap-2">
         <p>profile</p>
