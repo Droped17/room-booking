@@ -16,18 +16,18 @@ export const roomDataLeft = [
   ];
 
 export const roomDataRight = [
-    { id: 1, roomNo: 8, floor: 1, roomDetail: "detail", status: "ok" },
-    { id: 2, roomNo: 9, floor: 1, roomDetail: "detail", status: "ok" },
-    { id: 3, roomNo: 10, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 1, roomNo: 8, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 2, roomNo: 9, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 3, roomNo: 10, floor: 1, roomDetail: "detail", status: "not ok" },
     { id: 4, roomNo: 11, floor: 1, roomDetail: "detail", status: "not ok" },
-    { id: 5, roomNo: 12, floor: 1, roomDetail: "detail", status: "ok" },
-    { id: 6, roomNo: 13, floor: 1, roomDetail: "detail", status: "not ok" },
-    { id: 7, roomNo: 14, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 5, roomNo: 12, floor: 1, roomDetail: "detail", status: "not ok" },
+    { id: 6, roomNo: 13, floor: 1, roomDetail: "detail", status: "ok" },
+    { id: 7, roomNo: 14, floor: 1, roomDetail: "detail", status: "ok" },
     { id: 1, roomNo: 22, floor: 2, roomDetail: "detail", status: "ok" },
     { id: 2, roomNo: 23, floor: 2, roomDetail: "detail", status: "ok" },
     { id: 3, roomNo: 24, floor: 2, roomDetail: "detail", status: "ok" },
     { id: 4, roomNo: 25, floor: 2, roomDetail: "detail", status: "not ok" },
     { id: 5, roomNo: 26, floor: 2, roomDetail: "detail", status: "ok" },
-    { id: 6, roomNo: 27, floor: 2, roomDetail: "detail", status: "not ok" },
+    { id: 6, roomNo: 27, floor: 2, roomDetail: "detail", status: "ok" },
     { id: 7, roomNo: 28, floor: 2, roomDetail: "detail", status: "not ok" },
   ];

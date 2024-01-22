@@ -5,21 +5,14 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import { useState } from "react";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import FilledInput from "@mui/material/FilledInput";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import MySelectDateTime from "../components/MySelectDateTime";
 
 export default function MyStepper() {
-  const steps = [
-    "1",
-    "2",
-    "3",
-  ];
+  const steps = ["1", "2", "3"];
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
   const [day, setDay] = useState(0);
@@ -97,14 +90,28 @@ export default function MyStepper() {
       </Stepper>
       {activeStep === 0 ? (
         <>
-          <p>Step1</p>
+          <MySelectDateTime />
           <Button onClick={handleNext}>
             {activeStep === steps.length - 1 ? "Finish" : "Next"}
           </Button>
         </>
       ) : activeStep === 1 ? (
         <>
-          <p>step2</p>
+          <p>ข้อมูลส่วนตัว</p>
+          <div className="flex flex-col gap-2">
+            <FormControl variant="filled">
+              <InputLabel htmlFor="firstname">FirstName</InputLabel>
+              <FilledInput id="firstname" defaultValue="" />
+            </FormControl>
+            <FormControl variant="filled">
+              <InputLabel htmlFor="lastname">LastName</InputLabel>
+              <FilledInput id="lastname" defaultValue="" />
+            </FormControl>
+            <FormControl variant="filled">
+              <InputLabel htmlFor="phone">Phone</InputLabel>
+              <FilledInput id="phone" defaultValue="" />
+            </FormControl>
+          </div>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Button
               color="inherit"
@@ -115,7 +122,6 @@ export default function MyStepper() {
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
-
             <Button onClick={handleNext}>
               {activeStep === steps.length - 1 ? "Finish" : "Next"}
             </Button>
@@ -123,7 +129,18 @@ export default function MyStepper() {
         </>
       ) : activeStep === 2 ? (
         <>
-          <p>Step3</p>
+          <section className="flex">
+            <div className="w-80">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1678752717095-08cd0bd1d7e7?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt=""
+              />
+            </div>
+            <div>
+              <strong>Banking Detail</strong>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, blanditiis.</p>
+            </div>
+          </section>
           <Button onClick={handleNext}>
             {activeStep === steps.length - 1 ? "Finish" : "Next"}
           </Button>
